@@ -3,265 +3,192 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Yeshua Engenharia | Excellence in Engineering</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;400;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <title>Yeshua Engenharia | Alto Padrão</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
     <style>
         :root {
+            --bg: #000000;
             --gold: #C5A059;
-            --gold-gradient: linear-gradient(135deg, #C5A059 0%, #ecd099 50%, #C5A059 100%);
-            --black: #000000;
-            --dark: #0a0a0a;
-            --white: #ffffff;
-            --glass: rgba(255, 255, 255, 0.03);
-            --border: rgba(197, 160, 89, 0.2);
-            --transition: all 0.8s cubic-bezier(0.2, 1, 0.3, 1);
+            --text: #ffffff;
+            --sub: #888888;
+            --card: #0a0a0a;
         }
 
-        * { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
         body { 
-            background-color: var(--black); 
-            color: var(--white); 
-            font-family: 'Montserrat', sans-serif; 
-            overflow-x: hidden; 
+            background: var(--bg); 
+            color: var(--text); 
+            font-family: 'Inter', sans-serif; 
+            line-height: 1.6;
             -webkit-font-smoothing: antialiased;
         }
 
-        /* --- NAVBAR ELITE --- */
+        /* --- NAVIGATION --- */
         nav {
             position: fixed;
             top: 0; width: 100%;
-            padding: 25px 8%;
+            padding: 20px 5%;
             display: flex; justify-content: space-between; align-items: center;
-            z-index: 2000;
-            background: rgba(0,0,0,0.85);
-            backdrop-filter: blur(15px);
-            border-bottom: 1px solid var(--border);
+            background: rgba(0,0,0,0.9);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            border-bottom: 1px solid #111;
         }
-        .nav-logo { display: flex; align-items: center; gap: 15px; text-decoration: none; }
-        .nav-logo img { height: 35px; filter: invert(1); }
-        .nav-logo span { 
-            font-family: 'Playfair Display', serif; font-size: 1.8rem; 
-            letter-spacing: 4px; color: var(--white); text-transform: uppercase;
-        }
-        .nav-links { display: flex; gap: 20px; list-style: none; }
-        .nav-links a { 
-            text-decoration: none; color: rgba(255,255,255,0.6); 
-            font-size: 0.65rem; font-weight: 400; letter-spacing: 3px; 
-            text-transform: uppercase; transition: var(--transition);
-        }
-        .nav-links a:hover { color: var(--gold); letter-spacing: 5px; }
-
-        /* --- HERO CINEMATOGRÁFICO --- */
-        .hero {
-            height: 100vh;
-            display: flex; align-items: center; justify-content: center;
-            position: relative; overflow: hidden;
-        }
-        .hero-img {
-            position: absolute; top: 0; left: 0; width: 100%; height: 100%;
-            background: url('IMG-20260403-WA0124.jpg') center/cover no-repeat;
-            transform: scale(1.1); filter: brightness(0.4);
-            animation: heroZoom 20s infinite alternate;
-        }
-        @keyframes heroZoom { to { transform: scale(1); } }
-
-        .hero-content { position: relative; z-index: 10; text-align: center; max-width: 900px; padding: 0 20px; }
-        .hero-content span { color: var(--gold); letter-spacing: 12px; font-weight: 300; text-transform: uppercase; font-size: 0.7rem; margin-bottom: 20px; display: block; }
-        .hero-content h1 { font-family: 'Playfair Display', serif; font-size: clamp(2.5rem, 8vw, 5rem); line-height: 1; margin-bottom: 40px; font-weight: 700; }
+        .logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+        .logo img { height: 28px; filter: invert(1); }
+        .logo span { font-family: 'Playfair Display', serif; font-size: 1.5rem; color: #fff; letter-spacing: 2px; }
         
-        .btn-gold {
-            padding: 22px 60px; background: var(--gold-gradient); color: #000;
-            text-decoration: none; font-weight: 700; font-size: 0.8rem; letter-spacing: 4px;
-            text-transform: uppercase; transition: var(--transition); border: none; cursor: pointer;
-            display: inline-block;
+        .nav-links { display: flex; gap: 20px; }
+        .nav-links a { 
+            color: var(--sub); text-decoration: none; font-size: 0.7rem; 
+            text-transform: uppercase; letter-spacing: 2px; transition: 0.3s;
         }
-        .btn-gold:hover { transform: translateY(-5px) scale(1.05); box-shadow: 0 20px 40px rgba(197, 160, 89, 0.3); }
+        .nav-links a:hover { color: var(--gold); }
+
+        /* --- HERO --- */
+        .hero {
+            height: 80vh;
+            display: flex; align-items: center; justify-content: center;
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('IMG-20260403-WA0124.jpg') center/cover;
+            text-align: center; padding: 0 20px;
+        }
+        .hero-content h1 { 
+            font-family: 'Playfair Display', serif; font-size: clamp(2rem, 8vw, 4rem); 
+            font-weight: 400; margin-bottom: 30px; max-width: 900px;
+        }
+        .btn {
+            padding: 18px 40px; background: var(--gold); color: #000;
+            text-decoration: none; font-weight: 600; font-size: 0.8rem;
+            letter-spacing: 2px; text-transform: uppercase; transition: 0.4s;
+        }
+        .btn:hover { background: #fff; transform: translateY(-3px); }
 
         /* --- SEÇÕES --- */
-        .section { padding: 140px 10%; position: relative; }
-        .reveal { opacity: 0; transform: translateY(50px); transition: var(--transition); }
-        .reveal.active { opacity: 1; transform: translateY(0); }
+        section { padding: 100px 8%; }
+        .label { color: var(--gold); font-size: 0.7rem; letter-spacing: 5px; text-transform: uppercase; margin-bottom: 15px; display: block; }
+        h2 { font-family: 'Playfair Display', serif; font-size: clamp(2rem, 5vw, 3rem); margin-bottom: 40px; font-weight: 400; }
 
-        .title-box { margin-bottom: 80px; }
-        .title-box h2 { font-family: 'Playfair Display', serif; font-size: 3.5rem; font-weight: 400; margin-bottom: 10px; }
-        .title-box .line { width: 100px; height: 1px; background: var(--gold); }
+        /* SOBRE */
+        .grid-sobre { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+        .grid-sobre img { width: 100%; height: auto; border: 1px solid #222; }
+        .text-content p { color: var(--sub); font-size: 1.1rem; margin-bottom: 20px; text-align: justify; }
 
-        /* QUEM SOMOS ASSIMÉTRICO */
-        .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
-        .about-text p { font-size: 1.1rem; color: #888; margin-bottom: 30px; font-weight: 300; line-height: 2; }
-        .about-img { 
-            height: 650px; background: url('IMG-20260403-WA0126.jpg') center/cover; 
-            border: 1px solid var(--border); padding: 20px; position: relative;
-        }
-        .about-img::after { 
-            content: ""; position: absolute; top: -30px; right: -30px; 
-            width: 100%; height: 100%; border: 1px solid var(--gold); z-index: -1; 
-        }
+        /* SERVIÇOS */
+        .services { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
+        .s-card { background: var(--card); padding: 40px; border: 1px solid #111; transition: 0.3s; }
+        .s-card:hover { border-color: var(--gold); }
+        .s-card h3 { font-family: 'Playfair Display', serif; font-size: 1.5rem; margin-bottom: 15px; }
+        .s-card p { color: var(--sub); font-size: 0.9rem; }
 
-        /* GRID DE SERVIÇOS */
-        .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; }
-        .service-card { 
-            padding: 60px 40px; background: var(--glass); border: 1px solid rgba(255,255,255,0.05);
-            transition: var(--transition);
-        }
-        .service-card:hover { border-color: var(--gold); background: rgba(197, 160, 89, 0.05); transform: translateY(-10px); }
-        .service-card h3 { color: var(--gold); font-family: 'Playfair Display', serif; font-size: 1.8rem; margin-bottom: 20px; }
-        .service-card p { color: #666; font-size: 0.95rem; }
+        /* PORTFÓLIO */
+        .portfolio-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+        .port-item { position: relative; overflow: hidden; }
+        .port-item img { width: 100%; height: 100%; object-fit: cover; transition: 0.6s; filter: brightness(0.7); }
+        .port-item:hover img { transform: scale(1.05); filter: brightness(1); }
+        .port-cap { position: absolute; bottom: 20px; left: 20px; font-family: 'Playfair Display', serif; font-size: 1.2rem; }
 
-        /* OBRAS - PORTFÓLIO LUXO */
-        .portfolio-wrap { display: grid; grid-template-columns: repeat(2, 1fr); gap: 30px; }
-        .port-item { position: relative; height: 550px; overflow: hidden; }
-        .port-item img { width: 100%; height: 100%; object-fit: cover; transition: 1.5s; filter: brightness(0.6); }
-        .port-item:hover img { transform: scale(1.1); filter: brightness(1); }
-        .port-tag { 
-            position: absolute; bottom: 30px; left: 30px; z-index: 5;
-            padding-left: 20px; border-left: 2px solid var(--gold);
-        }
-        .port-tag h4 { font-family: 'Playfair Display', serif; font-size: 2rem; }
-
-        .process-banner { 
-            width: 100%; height: 700px; margin-top: 30px; 
-            background: url('IMG-20260404-WA0107.jpg') center/cover fixed; 
-            display: flex; align-items: center; justify-content: center;
-        }
-        .banner-text { background: rgba(0,0,0,0.7); padding: 40px 80px; backdrop-filter: blur(10px); border: 1px solid var(--gold); }
+        .banner-full { width: 100%; height: 500px; object-fit: cover; margin-top: 20px; border: 1px solid #111; }
 
         /* FOOTER */
-        footer { 
-            padding: 100px 10% 50px; background: var(--dark); border-top: 1px solid #111; 
-            text-align: center;
-        }
-        .footer-logo { font-family: 'Playfair Display', serif; font-size: 3rem; margin-bottom: 30px; display: block; }
-        .contact-row { display: flex; justify-content: center; gap: 50px; margin-bottom: 50px; }
-        .contact-row a { color: var(--gold); text-decoration: none; font-weight: 700; letter-spacing: 2px; }
-        .copy { color: #333; font-size: 0.7rem; letter-spacing: 3px; margin-top: 40px; text-transform: uppercase; }
+        footer { padding: 80px 8% 40px; text-align: center; border-top: 1px solid #111; }
+        .f-logo { font-family: 'Playfair Display', serif; font-size: 2rem; margin-bottom: 20px; }
+        .f-contact { display: flex; justify-content: center; gap: 30px; color: var(--sub); font-size: 0.9rem; margin-bottom: 40px; flex-wrap: wrap; }
+        .f-contact a { color: #fff; text-decoration: none; }
+        .copy { font-size: 0.7rem; color: #333; letter-spacing: 2px; text-transform: uppercase; }
 
-        @media (max-width: 968px) {
-            .about-grid, .portfolio-wrap { grid-template-columns: 1fr; }
-            .nav-links { display: none; }
-            .section { padding: 80px 5%; }
-            .hero-content h1 { font-size: 3rem; }
-            .about-img { height: 400px; }
-            .contact-row { flex-direction: column; gap: 20px; }
+        /* RESPONSIVIDADE REAL */
+        @media (max-width: 800px) {
+            nav { padding: 15px 5%; }
+            .nav-links { display: none; } /* Mobile foca no essencial */
+            .grid-sobre { grid-template-columns: 1fr; gap: 30px; }
+            .portfolio-grid { grid-template-columns: 1fr; }
+            section { padding: 60px 5%; }
+            .banner-full { height: 300px; }
         }
     </style>
 </head>
 <body>
 
     <nav>
-        <a href="#" class="nav-logo">
-            <img src="Screenshot_20260404-200709~2.png" alt="Yeshua">
+        <a href="#" class="logo">
+            <img src="Screenshot_20260404-200709~2.png" alt="Logo">
             <span>Yeshua</span>
         </a>
-        <ul class="nav-links">
-            <li><a href="#sobre">Empresa</a></li>
-            <li><a href="#especialidades">Especialidades</a></li>
-            <li><a href="#obras">Portfolio</a></li>
-            <li><a href="#contato">Contato</a></li>
-        </ul>
+        <div class="nav-links">
+            <a href="#sobre">Empresa</a>
+            <a href="#servicos">Expertise</a>
+            <a href="#obras">Obras</a>
+            <a href="#contato">Contato</a>
+        </div>
     </nav>
 
-    <section class="hero">
-        <div class="hero-img"></div>
+    <header class="hero">
         <div class="hero-content">
-            <span>Engineering & Design Build</span>
-            <h1>A excelência é o nosso padrão mínimo.</h1>
-            <a href="https://wa.me/5592993523377" class="btn-gold" target="_blank">Falar com um Diretor</a>
+            <h1>Engenharia de precisão para projetos de alto padrão.</h1>
+            <a href="https://wa.me/5592993523377" class="btn">Falar com Especialista</a>
+        </div>
+    </header>
+
+    <section id="sobre">
+        <div class="grid-sobre">
+            <div class="text-content">
+                <span class="label">Desde 2014</span>
+                <h2>Sólida. Ética. Absoluta.</h2>
+                <p>A Yeshua Engenharia entrega soluções completas na Construção Civil e Obras Industriais com rigor técnico inegociável.</p>
+                <p>Nosso compromisso é com a qualidade que supera os padrões do mercado corporativo, transformando projetos complexos em ativos de valor.</p>
+            </div>
+            <img src="IMG-20260403-WA0126.jpg" alt="Fachada">
         </div>
     </section>
 
-    <section id="sobre" class="section reveal">
-        <div class="about-grid">
-            <div class="about-text">
-                <div class="title-box">
-                    <h2>Nosso Legado</h2>
-                    <div class="line"></div>
-                </div>
-                <p>Desde 2014, a Yeshua Engenharia opera na intersecção entre a precisão técnica e a sofisticação arquitetônica. Somos especialistas em transformar desafios estruturais complexos em realidade industrial sólida.</p>
-                <p>Nossa equipe multidisciplinar entrega mais do que obras; entregamos ativos patrimoniais de altíssimo valor agregado para o mercado corporativo e industrial.</p>
+    <section id="servicos" style="background: #050505;">
+        <span class="label">Expertise</span>
+        <h2>O que fazemos de melhor</h2>
+        <div class="services">
+            <div class="s-card">
+                <h3>Construção Civil</h3>
+                <p>Superestrutura e infraestrutura industrial com máxima precisão e controle de cronograma.</p>
             </div>
-            <div class="about-img"></div>
-        </div>
-    </section>
-
-    <section id="especialidades" class="section" style="background: var(--dark);">
-        <div class="title-box reveal">
-            <h2>Expertise</h2>
-            <div class="line"></div>
-        </div>
-        <div class="services-grid">
-            <div class="service-card reveal">
-                <h3>Civil & Industrial</h3>
-                <p>Construção de superestruturas e infraestruturas com gestão rigorosa de processos.</p>
+            <div class="s-card">
+                <h3>Instalações Técnicas</h3>
+                <p>Engenharia de sistemas hidráulicos e elétricos de alta performance para indústrias.</p>
             </div>
-            <div class="service-card reveal">
-                <h3>Technical Systems</h3>
-                <p>Engenharia de instalações elétricas e hidráulicas para demandas de alta performance.</p>
-            </div>
-            <div class="service-card reveal">
-                <h3>Facilities High-End</h3>
-                <p>Manutenção técnica e conservação patrimonial com padrão de excelência internacional.</p>
+            <div class="s-card">
+                <h3>Facilities</h3>
+                <p>Manutenção técnica e conservação patrimonial com padrão de excelência corporativa.</p>
             </div>
         </div>
     </section>
 
-    <section id="obras" class="section">
-        <div class="title-box reveal">
-            <h2>Obras Selecionadas</h2>
-            <div class="line"></div>
-        </div>
-        <div class="portfolio-wrap">
-            <div class="port-item reveal">
-                <img src="IMG-20260403-WA0029.jpg" alt="Antes">
-                <div class="port-tag"><span>01</span><h4>O Rigor do Início</h4></div>
+    <section id="obras">
+        <span class="label">Portfólio</span>
+        <h2>Obras de Excelência</h2>
+        <div class="portfolio-grid">
+            <div class="port-item">
+                <img src="IMG-20260403-WA0029.jpg" alt="Obra Antes">
+                <div class="port-cap">Antes</div>
             </div>
-            <div class="port-item reveal">
-                <img src="IMG-20260403-WA0035.jpg" alt="Depois">
-                <div class="port-tag"><span>02</span><h4>A Perfeição da Entrega</h4></div>
+            <div class="port-item">
+                <img src="IMG-20260403-WA0035.jpg" alt="Obra Depois">
+                <div class="port-cap">Depois</div>
             </div>
         </div>
-        <div class="process-banner reveal">
-            <div class="banner-text">
-                <h3 style="font-family: 'Playfair Display'; font-size: 2.5rem; text-align: center;">Know-How Técnico</h3>
-                <p style="letter-spacing: 5px; text-transform: uppercase; font-size: 0.7rem; margin-top: 10px; text-align: center;">Engenharia em cada detalhe</p>
-            </div>
-        </div>
-        <div class="portfolio-wrap" style="margin-top: 30px;">
-            <div class="port-item reveal">
-                <img src="IMG-20260404-WA0065.jpg" alt="Obra">
-            </div>
-            <div class="port-item reveal">
-                <img src="IMG-20260404-WA0064.jpg" alt="Obra">
-            </div>
+        <img src="IMG-20260404-WA0107.jpg" class="banner-full" alt="Processo Técnico">
+        <div class="portfolio-grid" style="margin-top: 20px;">
+            <div class="port-item"><img src="IMG-20260404-WA0065.jpg" alt="Obra"></div>
+            <div class="port-item"><img src="IMG-20260404-WA0064.jpg" alt="Obra"></div>
         </div>
     </section>
 
     <footer id="contato">
-        <span class="footer-logo">Yeshua</span>
-        <div class="contact-row">
-            <a href="https://wa.me/5592993523377">WhatsApp: (92) 99352-3377</a>
-            <a href="mailto:Engenhariayeshua@gmail.com">Engenhariayeshua@gmail.com</a>
+        <div class="f-logo">Yeshua</div>
+        <div class="f-contact">
+            <span>WhatsApp: <a href="https://wa.me/5592993523377">(92) 99352-3377</a></span>
+            <span>E-mail: <a href="mailto:Engenhariayeshua@gmail.com">Engenhariayeshua@gmail.com</a></span>
         </div>
-        <p style="max-width: 500px; margin: 0 auto 40px; color: #555; font-size: 0.9rem;">
-            Manaus, Amazonas - Brasil. Engenharia de Alto Padrão.
-        </p>
-        <p class="copy">&copy; 2026 Yeshua Engenharia. All rights reserved.</p>
+        <p class="copy">&copy; 2026 Yeshua Engenharia. Todos os direitos reservados.</p>
     </footer>
 
-    <script>
-        function reveal() {
-            var reveals = document.querySelectorAll(".reveal");
-            for (var i = 0; i < reveals.length; i++) {
-                var windowHeight = window.innerHeight;
-                var elementTop = reveals[i].getBoundingClientRect().top;
-                var elementVisible = 150;
-                if (elementTop < windowHeight - elementVisible) {
-                    reveals[i].classList.add("active");
-                }
-            }
-        }
-        window.addEventListener("scroll", reveal);
-        reveal();
-    </script>
 </body>
 </html>
